@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NeoSoft.Day1.Session1.Providers;
+using NeoSoft.Day1.Session1.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace NeoSoft.Day1.Session1
         {
             services.AddTransient<ValueProvider>();
             services.AddControllers();
+            services.AddScoped<ILoanApplicationService, LoanApplicationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
